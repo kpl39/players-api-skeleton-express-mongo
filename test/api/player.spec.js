@@ -27,6 +27,7 @@ describe('Player API', () => {
       chai.request(server)
         .post('/api/players')
         .send(data.player)
+        .set('Authorization', null)  // Authorization header was still being set 
         .end(err => {
           expect(err).to.exist;
           expect(err.status).to.equal(403);

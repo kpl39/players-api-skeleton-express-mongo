@@ -62,7 +62,7 @@ describe('User API', () => {
           expect(res.body.success).to.be.true;
           expect(res.body.user).to.be.a('object');
           expect(res.body.user.id).to.be.a('string');
-          expect(res.body.user.password).to.equal(null);
+          expect(res.body.user.password).not.to.exist;
           expect(res.body.token).to.be.a('string');
           done();
         });
@@ -109,7 +109,7 @@ describe('User API', () => {
           expect(res.body.success).to.be.true;
           expect(res.body.user).to.be.a('object');
           expect(res.body.user.id).to.be.a('string');
-          expect(res.body.user.password).to.equal(null);
+          expect(res.body.user.password).not.to.exist;
           expect(res.body.token).to.be.a('string');
           done();
         });
@@ -140,7 +140,7 @@ describe('User API', () => {
           expect(res.body.user.id).to.be.a('string');
           expect(res.body.user.first_name).to.equal('Elon');
           expect(res.body.user.last_name).to.equal('Musk');
-          expect(res.body.user.password).to.equal(null);
+          expect(res.body.user.password).not.to.exist;
           done();
         });
     });
